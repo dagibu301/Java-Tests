@@ -2,7 +2,7 @@ package com.dagibu.javatests.util;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class StringUtilTest {
 
@@ -21,5 +21,19 @@ public class StringUtilTest {
         StringUtil.repeat("Hello ", -1);
     }
 
+    @Test
+    public void string_is_not_empty() {
+        assertFalse(StringUtil.isEmpty("This is not empty"));
+    }
+
+    @Test
+    public void string_is_null() {
+        assertTrue(StringUtil.isEmpty(null));
+    }
+
+    @Test
+    public void string_is_empty() {
+        assertTrue(StringUtil.isEmpty(""));
+    }
 
 }
